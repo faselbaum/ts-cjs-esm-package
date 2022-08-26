@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "lodash/padEnd": "../../node_modules/lodash-es/padEnd.js"
+  },
+  "scopes": {}
+}

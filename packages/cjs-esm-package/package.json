@@ -1,0 +1,49 @@
+{
+    "name": "cjs-esm-package",
+    "version": "1.0.0",
+    "description": "A package shipping as CJS and ESM",
+    "main": "dist/index.js",
+    "module": "dist/__esm__/index.mjs",
+    "types": "dist/__types__/index.d.ts",
+    "files": [
+      "dist/**/*"
+    ],
+    "exports": {
+      ".": {
+        "types": "./dist/__types__/index.d.ts",
+        "import": "./dist/__esm__/index.mjs",
+        "require": "./dist/index.js"
+      },
+      "./*": {
+        "types": "./dist/__types__/*.d.ts",
+        "import": "./dist/__esm__/*.mjs",
+        "require": "./dist/*.js"
+      },
+      "./package.json": "./package.json"
+    },
+    "typesVersions": {
+      "*": {
+        "dist/__types__/index.d.ts": ["./dist/__types__/index.d.ts"],
+        "*": ["./dist/__types__/*.d.ts", "./dist/__types__/*/index.d.ts"]
+      }
+    },
+    "scripts": {
+      "build:esm": "tsc --project tsconfig.esm.json && npm run fix:esm",
+      "build:cjs": "tsc --project tsconfig.cjs.json",
+      "prebuild": "rm -rf ./dist",
+      "build": "rm -rf ./dist && run-p build:cjs build:esm",
+      "fix:esm": "tsc-esm-fix --tsconfig='./tsconfig.esm.json' --ext='.mjs' --sourceMap"
+    },
+    "dependencies": {
+      "lodash": "4.17.21"
+    },
+    "devDependencies": {
+      "@types/lodash": "4.14.184",
+      "tsc-esm-fix": "2.20.4",
+      "typescript": "~4.7.2"
+    },
+    "author": "",
+    "license": "MIT",
+    "sideEffects": false
+  }
+  

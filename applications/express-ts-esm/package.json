@@ -1,0 +1,40 @@
+{
+  "name": "express-ts-esm",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "start": "node ./dist/index.js",
+    "start:importmap:handcrafted": "IMPORT_MAP_PATH=./handcrafted.node.importmap node --experimental-loader=@node-loader/import-maps ./dist/index.js",
+    "prestart:importmap:jsenv": "npm run generate:importmap:jsenv",
+    "start:importmap:jsenv": "IMPORT_MAP_PATH=./jsenv.node.importmap node --experimental-loader=@node-loader/import-maps ./dist/index.js",
+    "prestart:importmap:jspm": "npm run generate:importmap:jspm",
+    "start:importmap:jspm": "IMPORT_MAP_PATH=./jspm.node.importmap node --experimental-loader=@node-loader/import-maps ./dist/index.js",
+    "generate:importmap:jspm": "node ./generate-import-map-jspm.mjs",
+    "generate:importmap:jsenv": "node ./generate-import-map-jsenv.mjs"
+  },
+  "imports": {
+    "#express-ts-esm/*": {
+      "default": "./dist/*.js",
+      "types": "./src/*.ts"
+    }
+  },
+  "dependencies": {
+    "cjs-esm-package": "file:../../packages/cjs-esm-package",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "lodash-es": "4.17.15",
+    "express": "4.18.1"
+  },
+  "devDependencies": {
+    "typescript": "~4.7.2",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/express": "4.17.13",
+    "@node-loader/import-maps": "1.1.0",
+    "@jsenv/importmap-node-module": "5.1.3",
+    "@jspm/generator": "1.0.0-beta.37"
+  },
+  "license": "UNLICENSED"
+}
