@@ -1,3 +1,9 @@
+# !!! DISCLAIMER !!!
+**To anyone who might stumble upon this by chance in hopes of a usable template:**
+
+The code in this repo doesn't produce any satisfying / usable output yet.
+The ESM path is still mostly broken and anything that works is currently only tested against node.
+
 # ts-cjs-esm-package
 Demonstrate building an NPM Package that ships both module formats (CJS / ESM) from a TypeScript Codebase
 
