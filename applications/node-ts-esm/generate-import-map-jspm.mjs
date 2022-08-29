@@ -17,7 +17,7 @@ const generator = new Generator({
 });
 
 // where "pkg" is already installed into node_modules and package.json "dependencies" by npm
-await generator.traceInstall('./dist/index.js');
+await generator.traceInstall('cjs-esm-package');
 
 // output the full import map
 const output = JSON.stringify(generator.getMap(), null, 2)

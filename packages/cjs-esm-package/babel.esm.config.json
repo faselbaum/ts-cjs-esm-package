@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        ["module-resolver", {
+            "alias": {
+                "^lodash$": "lodash-es/lodash.js",
+                "^lodash/([^(\\.js)]+)": "lodash-es/\\1.js"
+            }
+        }]
+    ]
+}

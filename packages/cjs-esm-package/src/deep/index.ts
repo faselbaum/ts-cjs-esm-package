@@ -1,3 +1,5 @@
 import padEnd from 'lodash/padEnd'
+import lodash from 'lodash'
 
-export const Deep = padEnd('Deep')
+const deep = lodash.padEnd('Deep')
+export const Deep = padEnd(deep)
