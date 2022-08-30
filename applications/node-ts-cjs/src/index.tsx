@@ -1,6 +1,6 @@
-import { Main } from "cjs-esm-package";
-import { Deep } from "cjs-esm-package/deep/index"
-import { AlsoDeep } from "cjs-esm-package/deep/alsoDeep"
+import { Main } from "ts-cjs-esm-package";
+import { Deep } from "ts-cjs-esm-package/deep/index"
+import { AlsoDeep } from "ts-cjs-esm-package/deep/alsoDeep"
 
 console.log(`
 -----------

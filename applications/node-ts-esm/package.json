@@ -21,7 +21,7 @@
     }
   },
   "dependencies": {
-    "cjs-esm-package": "file:../../packages/cjs-esm-package"
+    "ts-cjs-esm-package": "file:../../packages/ts-cjs-esm-package"
   },
   "devDependencies": {
     "typescript": "~4.7.2",

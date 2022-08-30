@@ -1,5 +1,5 @@
 {
-    "name": "cjs-esm-package",
+    "name": "ts-cjs-esm-package",
     "version": "1.0.0",
     "description": "A package shipping as CJS and ESM",
     "main": "dist/index.js",

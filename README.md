@@ -11,9 +11,9 @@ Demonstrate building an NPM Package that ships both module formats (CJS / ESM) f
 
 ## Repository structure
 
-- [packages/cjs-esm-package](./packages/cjs-esm-package) - An NPM Package built from typescript sources that aims to ship CJS and ESM output.
-- [applications/express-ts-cjs](./applications/express-ts-cjs) - A simple node / express web app that is configured to import the CJS version of the `cjs-esm-package`
-- [applications/express-ts-esm](./applications/express-ts-esm) - A simple node / express web app that is configured to import the ESM version of the `cjs-esm-package`
+- [packages/ts-cjs-esm-package](./packages/ts-cjs-esm-package) - An NPM Package built from typescript sources that aims to ship CJS and ESM output.
+- [applications/node-ts-cjs](./applications/node-ts-cjs) - A simple node app that is configured to import the CJS version of the `ts-cjs-esm-package`
+- [applications/node-ts-esm](./applications/node-ts-esm) - A simple node app that is configured to import the ESM version of the `ts-cjs-esm-package`
 
 This repo utilizes npm workspaces. to run any npm script in one of the workspaces from the root dir use:
 
@@ -31,4 +31,6 @@ Take a look into the root `package.json`'s `engine` field to see what runtime th
 > npm i
 
 > npm run build
+
+> npm run  start
 ```
