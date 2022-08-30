@@ -32,5 +32,5 @@ Take a look into the root `package.json`'s `engine` field to see what runtime th
 
 > npm run build
 
-> npm run  start
+> npm run start
 ```
