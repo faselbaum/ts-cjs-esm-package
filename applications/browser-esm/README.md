@@ -3,6 +3,9 @@
 An example showcasing how to run the `ts-cjs-esm-package` directly in your browser using [import-maps](https://github.com/WICG/import-maps#scope).
 No build steps needed. 
 
+## Prequisites
+Make sure you built the `ts-cjs-esm-package` before running this.
+
 ## Usage
 
 ```Bash
