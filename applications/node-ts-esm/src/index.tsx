@@ -1,7 +1,7 @@
 import { Main } from "ts-cjs-esm-package";
-import { Deep } from "ts-cjs-esm-package/deep/index"
-import { AlsoDeep } from "ts-cjs-esm-package/deep/alsoDeep"
-import { DefaultExport, NamedExport } from "ts-cjs-esm-package/deep/improperDualPackageImport"
+import { Deep } from "ts-cjs-esm-package/deep/index.mjs"
+import { AlsoDeep } from "ts-cjs-esm-package/deep/alsoDeep.mjs"
+import { DefaultExport, NamedExport } from "ts-cjs-esm-package/deep/improperDualPackageImport.mjs"
 
 import { Foo } from '#node-ts-esm/foo/index'
 

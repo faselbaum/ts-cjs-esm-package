@@ -4,7 +4,7 @@
     "declaration": true,
     "declarationDir": "dist/__types__",
     "module": "ESNext",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Node16",
     "outDir": "dist/__esm__"
   }
 }

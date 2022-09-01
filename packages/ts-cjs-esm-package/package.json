@@ -14,18 +14,12 @@
         "import": "./dist/__esm__/index.mjs",
         "require": "./dist/index.js"
       },
-      "./*": {
+      "./*.mjs": {
         "types": "./dist/__types__/*.d.ts",
         "import": "./dist/__esm__/*.mjs",
         "require": "./dist/*.js"
       },
       "./package.json": "./package.json"
-    },
-    "typesVersions": {
-      "*": {
-        "dist/__types__/index.d.ts": ["./dist/__types__/index.d.ts"],
-        "*": ["./dist/__types__/*.d.ts", "./dist/__types__/*/index.d.ts"]
-      }
     },
     "scripts": {
       "build:esm": "tsc --project tsconfig.esm.json && npm run build:esm:fix-relatives && npm run build:esm:remap-cjs-dependencies",

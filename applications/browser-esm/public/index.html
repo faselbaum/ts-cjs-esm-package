@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script type="importmap">
+        {
+            "imports": {
+                "ts-cjs-esm-package": "/dependencies/ts-cjs-esm-package/dist/__esm__/index.mjs",
+                "ts-cjs-esm-package/": "/dependencies/ts-cjs-esm-package/dist/__esm__/"
+            },
+            "scopes": {
+              "/dependencies/ts-cjs-esm-package/dist/__esm__/": {
+                "lodash-es": "/dependencies/lodash-es/lodash.js",
+                "lodash-es/": "/dependencies/lodash-es/",
+                "styled-components": "/dependencies/styled-components/dist/styled-components.esm.js"
+              },
+              "/dependencies/styled-components/dist/styled-components.esm.js": {
+                "react-is": "/dependencies/react-is-esm/dist-web/index.js",
+                "react": "/dependencies/react/esm/react.development.js"
+              }
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./index.mjs"></script>
+  </body>
+</html>

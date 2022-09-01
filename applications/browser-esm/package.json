@@ -1,0 +1,18 @@
+{
+  "name": "browser-esm",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run link-node-modules",
+    "start": "http-server ./public --cors -o index.html",
+    "link-node-modules": "ln -sf $PWD/../../node_modules/ public/dependencies"
+  },
+  "dependencies": {
+    "ts-cjs-esm-package": "file:../../packages/ts-cjs-esm-package",
+    "react-is-esm": "^16.8.4-alpha.0"
+  },
+  "devDependencies": {
+    "http-server": "14.1.1"
+  },
+  "license": "UNLICENSED"
+}

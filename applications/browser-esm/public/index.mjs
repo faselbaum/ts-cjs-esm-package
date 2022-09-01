@@ -5,7 +5,7 @@ import { DefaultExport, NamedExport } from "ts-cjs-esm-package/deep/improperDual
 
 console.log(`
 -----------
-NODE-TS-CJS
+NODE-TS-ESM
 -----------
 Main: ${Main}
 Deep: ${Deep}
