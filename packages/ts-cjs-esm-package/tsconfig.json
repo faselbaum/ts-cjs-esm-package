@@ -1,7 +1,10 @@
 {
-  "include": ["src/**/*"],
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src"
+    "baseUrl": "./src",
+    "rootDirs": ["src", "compat"],
+    "paths": {
+      "#compat/*": ["../compat/cjs/*"]
+    }
   }
 }

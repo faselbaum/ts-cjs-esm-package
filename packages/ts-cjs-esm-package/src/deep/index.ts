@@ -5,8 +5,8 @@
  * 
  * see: packages/ts-cjs-esm-package/babel.esm.config.json
  */
-import padEnd from 'lodash/padEnd.js'
-import lodash, { padStart } from 'lodash'
+import padEnd from '#compat/lodash/padEnd'
+import lodash, { padStart } from '#compat/lodash/main.entry'
 
 const deep = lodash.padEnd(padStart('Deep'))
 export const Deep = padEnd(deep)

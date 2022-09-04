@@ -1,7 +1,13 @@
 {
+  "include": ["src/**/*", "compat/cjs/**/*"],
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "dist/__types__",
     "module": "CommonJS",
-    "outDir": "dist"
+    "outDir": "dist",
+    "paths": {
+      "#compat/*": ["../compat/cjs/*"]
+    }
   }
 }

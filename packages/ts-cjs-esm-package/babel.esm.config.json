@@ -2,9 +2,7 @@
     "plugins": [
         ["module-resolver", {
             "alias": {
-                "^lodash$": "lodash-es/lodash.js",
-                "^lodash/(.+)(\\.js)$": "lodash-es/\\1\\2",
-                "^lodash/(?!(.+(\\.js)))(.+)$": "lodash-es/\\3.js"
+                "^#compat/(.+)$": "#compat/\\1.mjs"
             }
         }]
     ]

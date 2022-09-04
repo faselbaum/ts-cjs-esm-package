@@ -10,22 +10,32 @@
     ],
     "exports": {
       ".": {
-        "types": "./dist/__types__/index.d.ts",
-        "import": "./dist/__esm__/index.mjs",
-        "require": "./dist/index.js"
+        "types": "./dist/__types__/src/index.d.ts",
+        "import": "./dist/__esm__/src/index.mjs",
+        "require": "./dist/src/index.js"
       },
       "./*.mjs": {
-        "types": "./dist/__types__/*.d.ts",
-        "import": "./dist/__esm__/*.mjs",
-        "require": "./dist/*.js"
+        "types": "./dist/__types__/src/*.d.ts",
+        "import": "./dist/__esm__/src/*.mjs",
+        "require": "./dist/src/*.js"
       },
       "./package.json": "./package.json"
+    },
+    "imports": {
+      "#compat/*.mjs": {
+        "require": "./dist/compat/cjs/*.js",
+        "import": "./dist/__esm__/compat/esm/*.mjs"
+      },
+      "#compat/*": {
+        "require": "./dist/compat/cjs/*.js",
+        "import": "./dist/__esm__/compat/esm/*.mjs"
+      }
     },
     "scripts": {
       "build:esm": "tsc --project tsconfig.esm.json && npm run build:esm:fix-relatives && npm run build:esm:remap-cjs-dependencies",
       "build:cjs": "tsc --project tsconfig.cjs.json",
       "prebuild": "rm -rf ./dist",
-      "build": "rm -rf ./dist && run-p build:cjs build:esm",
+      "build": "rm -rf ./dist && npm run build:cjs && npm run build:esm",
       "build:esm:fix-relatives": "tsc-esm-fix --tsconfig='./tsconfig.esm.json' --ext='.mjs' --sourceMap",
       "build:esm:remap-cjs-dependencies": "babel --config-file ./babel.esm.config.json ./dist/__esm__/ -d ./dist/__esm__ --keep-file-extension"
     },
@@ -39,6 +49,7 @@
       "@babel/cli": "7.18.10",
       "babel-plugin-module-resolver": "4.1.0",
       "@types/lodash": "4.14.184",
+      "@types/lodash-es": "4.17.6",
       "tsc-esm-fix": "2.20.4",
       "typescript": "~4.7.2",
       "@types/styled-components": "5.1.26"
