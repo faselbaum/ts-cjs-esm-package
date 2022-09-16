@@ -10,33 +10,35 @@
     ],
     "exports": {
       ".": {
-        "types": "./dist/__types__/src/index.d.ts",
-        "import": "./dist/__esm__/src/index.mjs",
-        "require": "./dist/src/index.js"
+        "types": "./dist/__types__/index.d.ts",
+        "import": "./dist/__esm__/index.mjs",
+        "require": "./dist/index.js"
       },
       "./*.mjs": {
-        "types": "./dist/__types__/src/*.d.ts",
-        "import": "./dist/__esm__/src/*.mjs",
-        "require": "./dist/src/*.js"
+        "types": "./dist/__types__/*.d.ts",
+        "import": "./dist/__esm__/*.mjs",
+        "require": "./dist/*.js"
       },
       "./package.json": "./package.json"
     },
     "imports": {
       "#compat/*.mjs": {
-        "require": "./dist/compat/cjs/*.js",
-        "import": "./dist/__esm__/compat/esm/*.mjs"
+        "require": "./dist/__compat__/cjs/*.js",
+        "import": "./dist/__compat__/esm/*.mjs"
       },
       "#compat/*": {
-        "require": "./dist/compat/cjs/*.js",
-        "import": "./dist/__esm__/compat/esm/*.mjs"
+        "require": "./dist/__compat__/cjs/*.js",
+        "import": "./dist/__compat__/esm/*.mjs"
       }
     },
     "scripts": {
-      "build:esm": "tsc --project tsconfig.esm.json && npm run build:esm:fix-relatives && npm run build:esm:remap-cjs-dependencies",
-      "build:cjs": "tsc --project tsconfig.cjs.json",
+      "build:esm": "tsc --build ./tsconfig.esm.json && npm run build:esm:fix-relatives && npm run build:esm:remap-cjs-dependencies",
+      "build:cjs": "tsc --build ./tsconfig.cjs.json",
       "prebuild": "rm -rf ./dist",
       "build": "rm -rf ./dist && npm run build:cjs && npm run build:esm",
-      "build:esm:fix-relatives": "tsc-esm-fix --tsconfig='./tsconfig.esm.json' --ext='.mjs' --sourceMap",
+      "build:esm:fix-relatives": "npm run build:esm:lib:fix-relatives && npm run build:esm:compat:fix-relatives",
+      "build:esm:lib:fix-relatives": "tsc-esm-fix --target='./dist/__esm__' --ext='.mjs' --sourceMap",
+      "build:esm:compat:fix-relatives": "tsc-esm-fix --target='./dist/__compat__/esm' --ext='.mjs' --sourceMap",
       "build:esm:remap-cjs-dependencies": "babel --config-file ./babel.esm.config.json ./dist/__esm__/ -d ./dist/__esm__ --keep-file-extension"
     },
     "dependencies": {

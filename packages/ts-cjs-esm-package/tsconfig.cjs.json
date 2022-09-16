@@ -1,13 +1,17 @@
 {
-  "include": ["src/**/*", "compat/cjs/**/*"],
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "dist/__types__",
     "module": "CommonJS",
-    "outDir": "dist",
+    "moduleResolution": "Node16",
+    "outDir": "./dist",
     "paths": {
-      "#compat/*": ["../compat/cjs/*"]
+      "#compat/*": ["./compat/cjs/*"]
+    },
+    "rootDirs": ["./src", "./compat/cjs"]
+  },
+  "references": [
+    {
+        "path": "./compat/cjs/tsconfig.json"
     }
-  }
+  ]
 }

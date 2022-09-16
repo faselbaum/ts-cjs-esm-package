@@ -1,14 +1,19 @@
 {
-  "include": ["src/**/*", "compat/esm/**/*"],
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "dist/__types__",
+    "declarationDir": "./dist/__types__",
     "module": "ESNext",
     "moduleResolution": "Node16",
-    "outDir": "dist/__esm__",
+    "outDir": "./dist/__esm__",
     "paths": {
-      "#compat/*": ["../compat/esm/*"]
+      "#compat/*": ["./compat/esm/*"]
+    },    
+    "rootDirs": ["./src", "./compat/esm"]
+  },
+  "references": [
+    {
+        "path": "./compat/esm/tsconfig.json"
     }
-  }
+  ]
 }
